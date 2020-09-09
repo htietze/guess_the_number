@@ -39,20 +39,24 @@ def check_guess(guess, secret):
 
 
 def main():
-
-    (low, high) = configure_range()
-    secret = generate_secret(low, high)
-    counter = 0
     while True:
-        guess = get_guess()
-        result = check_guess(guess, secret)
-        counter+=1
-        print(result)
-        print("guessed: ", counter, "times")
-    
+        (low, high) = configure_range()
+        secret = generate_secret(low, high)
+        counter = 0
+        while True:
+            guess = get_guess()
+            result = check_guess(guess, secret)
+            counter+=1
+            print(result)
+            print("guessed: ", counter, "times")
+        
 
-        if result == correct:
-            break
+            if result == correct:
+                break
+        ans = input("Do you want play again? ")
+        if ans == "y":
+            continue
+        break
 
 
 if __name__ == '__main__':
