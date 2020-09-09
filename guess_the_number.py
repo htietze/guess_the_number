@@ -33,7 +33,7 @@ def check_guess(guess, secret):
     if guess == secret:
         return correct
     if guess < secret:
-        return too_low
+        return Too_Low
     if guess > secret:
         return too_high
 
